@@ -37,7 +37,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <ul className="uppercase font-semibold text-[#ffffff]  justify-center items-center text-[0.9rem] bg-[#0d0723e1] list-none lg:space-x-[150px] space-x-[60px] hidden lg:flex">
+      <ul className="uppercase font-semibold text-[#ffffff] pl-[65px] justify-center items-center text-[0.9rem] bg-[#0d0723e1] list-none lg:space-x-[150px] space-x-[60px] hidden lg:flex">
         <li>
           <Link
             to="about"
