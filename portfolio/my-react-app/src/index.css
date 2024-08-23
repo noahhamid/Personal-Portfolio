@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 6, 53, 0.5); /* Semi-transparent black */
+  z-index: 30; /* Make sure it's above other content but below the menu */
+}
+li{
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -75%; /* Initially hidden off-screen */
+  width: 75%; /* Default width */
+  height: 100vh;
+  background-color: #391271; /* Your menu background color */
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  transition: right 0.3s ease-in-out; /* Smooth slide effect */
+  z-index: 40; /* Make sure it's above the backdrop */
+}
+
+.menu.open {
+  right: 0; /* Slide into view */
+}
+/* animate */
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity:1;
+  }
+}
+
+.animate-name {
+  animation: slideUp .5s ease-out forwards;
+}
+.animate-info {
+  animation: slideUp .8s ease-out forwards;
+}
+.animate-button {
+  animation: slideUp 1.1s ease-out forwards;
+}
+
+.skill-item {
+  width: 120px;
+  height: 150px;
+  background-color: #0d0723;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 4px 6px rgba(84, 82, 82, 0.5);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .8s ease-out;
+}
+
+.skill-item.md\:w-[180px] {
+  width: 180px;
+  height: 180px;
+}
+
+.skill-item.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* For content sliding in from the left */
+/* Default (Large screens) */
+.about-content {
+  opacity: 0;
+  transform: translateX(-70px); /* Slide in from the left */
+  transition: all 0.8s ease-out;
+}
+
+.about-content.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Image sliding in from the right */
+.about-image {
+  opacity: 0;
+  transform: translateX(70px); /* Slide in from the right */
+  transition: all 0.8s ease-out;
+}
+
+.about-image.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Medium and small screens */
+@media (max-width: 768px) { /* Adjust the breakpoint as needed for medium screens */
+  .about-content {
+    transform: translateY(80px); /* Slide in from the bottom */
+  }
+
+  .about-content.slide-in {
+    transform: translateY(0);
+  }
+
+  .about-image {
+    transform: translateY(80px); /* Slide in from the bottom */
+  }
+
+  .about-image.slide-in {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* project page animation */
+.project-item {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: all 0.5s ease-out;
+}
+
+.project-item.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
