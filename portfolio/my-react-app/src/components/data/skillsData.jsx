@@ -5,7 +5,7 @@ import tailwind from "../images/tailwind.svg";
 import sass from "../images/sass.svg";
 import react from "../images/react.svg";
 import typescript from "../images/typescript.svg";
-import github from "../images/github.svg";
+import next from "../images/next.svg";
 
 const skillData = [
   {
@@ -17,10 +17,10 @@ const skillData = [
     name: "css",
   },
 
-    {
-        img: sass,
-        name: "sass",
-    },
+  {
+    img: sass,
+    name: "sass",
+  },
   {
     img: tailwind,
     name: "tailwind",
@@ -38,8 +38,8 @@ const skillData = [
     name: "typescript",
   },
   {
-    img: github,
-    name: "github",
+    img: next,
+    name: "next",
   },
 ];
 export default skillData;
